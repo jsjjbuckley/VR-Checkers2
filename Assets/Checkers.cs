@@ -11,8 +11,8 @@ public class Checkers : MonoBehaviour {
     private bool isRedTurn;
     private bool isRed;
 
-    private Vector3 boardOffset = new Vector3(-4.0f, 0, -4.0f);
-    private Vector3 pieceOffset = new Vector3(0.5f, 0, 0.5f);
+    private Vector3 boardOffset = new Vector3(-0.58f, 0.802f, 0.555f);
+    private Vector3 pieceOffset = new Vector3(0.1f, 0, 0.1f);
 
     private Vector2 mouseOver;
     private Vector2 startDrag;
@@ -164,6 +164,15 @@ public class Checkers : MonoBehaviour {
     }
     private void GenerateBoard()
     {
+        //Fill board with null by default
+        for (int x = 0; x < 8; x++)
+        {
+            for (int y = 0; y < 8; y++)
+            {
+                pieces[x, y] = null;
+            }
+        }
+
         //Generate Red team
         for (int y = 0; y<3; y++)
         {
@@ -181,7 +190,7 @@ public class Checkers : MonoBehaviour {
             bool oddRow = (y % 2 == 0);
             for (int x = 0; x < 8; x += 2)
             {
-                //Generate our piece
+                //Generate their piece
                 GeneratePiece((oddRow) ? x : x + 1, y);
             }
         }
