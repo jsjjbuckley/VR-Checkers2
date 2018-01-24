@@ -35,7 +35,7 @@ public class Piece : MonoBehaviour {
                 }
             }
         }
-        else if (!isRed || isKing)
+        if (!isRed || isKing)
         {
             //bot left
             if (x >= 2 && y >= 2)
@@ -62,7 +62,6 @@ public class Piece : MonoBehaviour {
                 }
             }
         }
-        else
             return false;
     }
     public bool ValidMove(Piece[,] board, int x1, int y1, int x2, int y2)

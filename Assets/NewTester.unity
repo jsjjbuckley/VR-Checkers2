@@ -1112,11 +1112,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ccf6afbbd77e9c47bc68cee3f4dfbbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.54
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ccf6afbbd77e9c47bc68cee3f4dfbbd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.01
+      value: 10.56
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ccf6afbbd77e9c47bc68cee3f4dfbbd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1490,6 +1490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9412aff759420192d8dcf33f969bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inactiveMaterial: {fileID: 0}
+  gazedAtMaterial: {fileID: 0}
 --- !u!198 &955127922
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5301,7 +5303,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1973410229084480, guid: e00ad79051cf05f458e6cc27023f6fa8, type: 2}
       propertyPath: m_Name
-      value: Plane (1)
+      value: CheckerBoard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e00ad79051cf05f458e6cc27023f6fa8, type: 2}
@@ -5457,6 +5459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2d286fc7c3e427bbde238c0ebb970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_launchVrHomeButton: {fileID: 0}
+  m_demoInputManager: {fileID: 0}
 --- !u!1 &1145646057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,6 +6119,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d734e0f1e8152164f912667b484f1bb9, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1859337868 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1973410229084480, guid: e00ad79051cf05f458e6cc27023f6fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1035876505}
+--- !u!114 &1859337874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1859337868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68d6c1b2c7eb374aa1a41df41533fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redCheckerPrefab: {fileID: 1485502806449142, guid: 9c7f81bc65d917b41b0acc481b81d479,
+    type: 2}
+  blackCheckerPrefab: {fileID: 1153264656676464, guid: d42c946858c6a264484a2243ed2ec7ef,
+    type: 2}
 --- !u!1 &1968184278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6276,5 +6300,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f5d450d1bd94c97b1dc8109b633ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  safetyRing: {fileID: 0}
   enableDebugLog: 1

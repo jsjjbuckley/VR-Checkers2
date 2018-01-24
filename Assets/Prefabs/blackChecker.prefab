@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23716694006841888}
   - component: {fileID: 54348685701696260}
   - component: {fileID: 114019234125769186}
+  - component: {fileID: 114605996163527152}
   m_Layer: 0
   m_Name: blackChecker
   m_TagString: Untagged
@@ -109,6 +110,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 993df02d4933602498d4b138432cd655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRed: 0
+  isKing: 0
+--- !u!114 &114605996163527152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153264656676464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd028549b9f9024f8a025bd1c3a5567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0

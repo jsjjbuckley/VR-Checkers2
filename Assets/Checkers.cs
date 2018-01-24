@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkers : MonoBehaviour {
+public class Checkers : MonoBehaviour
+{
 
     public Piece[,] pieces = new Piece[8, 8];
     public GameObject redCheckerPrefab;
@@ -40,7 +41,7 @@ public class Checkers : MonoBehaviour {
             //Replace with collision and click of piece and control
             if (Input.GetMouseButtonDown(0))
             {
-                SelectPiece(x,y);
+                SelectPiece(x, y);
             }
             if (Input.GetMouseButtonUp(0))
             {
@@ -88,12 +89,12 @@ public class Checkers : MonoBehaviour {
     private void SelectPiece(int x, int y)
     {
         //out of bounds
-        if(x < 0 || x >= pieces.Length || y < 0 || y >= pieces.Length)
+        if (x < 0 || x >= pieces.Length || y < 0 || y >= pieces.Length)
         {
             return;
         }
         Piece p = pieces[x, y];
-        if(p != null)
+        if (p != null)
         {
             selectedPiece = p;
             startDrag = mouseOver;
@@ -107,9 +108,9 @@ public class Checkers : MonoBehaviour {
         endDrag = new Vector2(x2, y2);
         selectedPiece = pieces[x1, y1];
         //Out of bounds
-        if(x2 < 0 || x2 >= pieces.Length || y2 < 0 || y2 >= pieces.Length)
+        if (x2 < 0 || x2 >= pieces.Length || y2 < 0 || y2 >= pieces.Length)
         {
-            if(selectedPiece != null)
+            if (selectedPiece != null)
             {
                 MovePiece(selectedPiece, x1, y1);
             }
@@ -118,7 +119,7 @@ public class Checkers : MonoBehaviour {
             return;
         }
         //Check if piece selected
-        if(selectedPiece != null)
+        if (selectedPiece != null)
         {
             //If it has not moved
             if (endDrag == startDrag)
@@ -133,10 +134,10 @@ public class Checkers : MonoBehaviour {
             {
                 //Did we kill anything
                 //If this is a jump
-                if(Mathf.Abs(x2-x1) == 2)
+                if (Mathf.Abs(x2 - x1) == 2)
                 {
                     Piece p = pieces[(x1 + x2) / 2, (y1 + y2) / 2];
-                    if(p != null)
+                    if (p != null)
                     {
                         pieces[(x1 + x2) / 2, (y1 + y2) / 2] = null;
                         Destroy(p);
@@ -174,13 +175,13 @@ public class Checkers : MonoBehaviour {
         }
 
         //Generate Red team
-        for (int y = 0; y<3; y++)
+        for (int y = 0; y < 3; y++)
         {
             bool oddRow = (y % 2 == 0);
             for (int x = 0; x < 8; x += 2)
             {
-            //Generate our piece
-            GeneratePiece((oddRow) ? x : x+1, y);
+                //Generate our piece
+                GeneratePiece((oddRow) ? x : x + 1, y);
             }
         }
 
