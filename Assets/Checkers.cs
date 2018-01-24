@@ -157,7 +157,50 @@ public class Checkers : MonoBehaviour {
         startDrag = Vector2.zero;
         isRedTurn = !isRedTurn;
         CheckVictory();
+        int x = (int)endDrag.x;
+        int y = (int)endDrag.y;
+        //promotions
+        if(selectedPiece.iswhite && !selectedPiece.isKing && y == 8)
+        {
+             selectedPiece.isKing = true;
+             selectedPiece.transform.Rotate(Vector3.right*180);
+
+       }
+       else if(selectedPiece.iswhite && !selectedPiece.isKing && y == 0)
+       {
+            selectedPiece.isKing = true;
+            selectedPiece.transform.Rotate(Vector3.right*180);
+
+      }
+      selectedPiece = null;
+      startDrag = Vector2.zero;
+      if(ScanForPossibleMove(selectedPiece, x, y).COunt != 0 && hasKilled)
+            return;
+
+      iswhiteTurn = !iswhiteTurn;
+      hasKilled = false;
+      CheckVictory();
     }
+    private list<piece> ScanForPossibleMove(Piece p, int x, int y)
+    {
+          forcePieces = new List<Piece>();
+          if()
+
+
+      return forcePieces;
+   }
+    private list<piece> ScanForPossibleMove()
+    {
+          forcePieces = new List<Piece>();
+
+          for(int i = 0; i < 9; i++)
+            for(int j = 0; j < 8; j++)
+                  if(pieces[i,j] != null && pieces[i,j].iswhite == iswhiteTurn])
+                        if(pieces[i,j].IsForceToMove(pieces, i, j))
+                              forcedPieces.Add(pieces[i,j]);
+      return forcePieces;
+   }
+
     private void CheckVictory()
     {
 
